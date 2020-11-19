@@ -19,6 +19,9 @@ public class Principal {
     public static void main(String[] args) {
         // TODO code application logic here
             int menu;
+            Usuario inicio=new Usuario();
+            inicio.getListaUsuarios();
+                    
             do{
                 JOptionPane.showMessageDialog(null, "Bienvenido a The Basic Store");
                 menu= Integer.parseInt(JOptionPane.showInputDialog("Digite el numero de la accion que desea ralizar \n"+"1.Usuario \n2.Registro \n3.Administrador \n0.Salir"));
@@ -37,9 +40,6 @@ public class Principal {
                 }
                 
             }while(menu!=0);
-    }
-    public static void administracion(){
-       
     }
     
 }
