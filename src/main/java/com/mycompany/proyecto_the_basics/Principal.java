@@ -19,8 +19,10 @@ public class Principal {
     public static void main(String[] args) {
         // TODO code application logic here
             int menu;
-            Usuario inicio=new Usuario();
+            
+            Usuario inicio =new Usuario();
             inicio.getListaUsuarios();
+                    
                     
             do{
                 JOptionPane.showMessageDialog(null, "Bienvenido a The Basic Store");
