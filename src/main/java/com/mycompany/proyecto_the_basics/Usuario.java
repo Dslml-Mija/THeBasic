@@ -13,42 +13,44 @@ import javax.swing.JOptionPane;
  * @author mija2
  */
 public class Usuario {
+
+    Usuario listaUsuario[]=new Usuario[5];
     
-    Usuario listaUsuarios[]=new Usuario[5];
     
     public Usuario(){
-        listaUsuarios[0]=new Usuario("Administrador", null, "Admin@gmail","Admin123", null);
-        listaUsuarios[1]=new Usuario("mija", "154456462", "mija28@hotmail", "mija123", "SanJose");
-        
+        listaUsuario[0]=new Usuario("administrador", "admin@gmail", "admin");
+        listaUsuario[1]=new Usuario("mija", "mija28@hotmail", "mija123");
     }
-    
-    private String nomUsuario;
-    private String cedula;
-    private String correo;
-    private String contraseña;
-    private String direccion;
     
     
 
-    public Usuario(String nomUsuario, String cedula, String correo, String contraseña, String direccion) {
+    public Usuario(String nomUsuario, String correo, String contraseña) {
         this.nomUsuario = nomUsuario;
-        this.cedula = cedula;
         this.correo = correo;
         this.contraseña = contraseña;
-        this.direccion = direccion;
+        
     }
     
     
+    private String nomUsuario;  
+    private String correo;
+    private String contraseña;
+    
+   
     public void LogIn(){
         
         int intentos=0;
         do{
-            for(int i=0;i<listaUsuarios.length;i++){
+            for(int i=0;i<listaUsuario.length;i++){
                 
                 String correo=JOptionPane.showInputDialog("Ingrese Correo");
                 String contraLog=JOptionPane.showInputDialog("Ingrese contra");
-                if(listaUsuarios[i].correo==correo&&listaUsuarios[i].contraseña==contraLog){
+                if(listaUsuario[i].correo.equals(correo)&&listaUsuario[i].contraseña.equals(contraLog)){
                     JOptionPane.showMessageDialog(null, "Bienvenido");
+                    if(listaUsuario[i].nomUsuario=="adminsitrador"){
+                        
+                    }
+                    
                     break;
                 }else JOptionPane.showMessageDialog(null, "Datos Invalidos");
                 
@@ -59,11 +61,10 @@ public class Usuario {
         
     }
     public void nuevoRegistro(){
-        for(int i=0;i<listaUsuarios.length;i++){
-            if(listaUsuarios[i]==null){
+        
+        for(int i=0;i<listaUsuario.length;i++){
+            if(listaUsuario[i]==null){
                 String usu=JOptionPane.showInputDialog("Ingrese nombre de usuario");
-                String dir=JOptionPane.showInputDialog("direccion de facturacion");
-                String ced=JOptionPane.showInputDialog("Ingrese cedula");
                 String corr=JOptionPane.showInputDialog("Ingrese Correo");
                 do{
                     
@@ -73,22 +74,16 @@ public class Usuario {
                    
                 }while(!corr.contains("@"));
                 String contr=JOptionPane.showInputDialog("Ingrese contraseña");
-                listaUsuarios[i]= new Usuario(usu, ced, corr, contr, dir);
+                listaUsuario[i].nomUsuario=usu;
+                listaUsuario[i].correo=corr;
+                listaUsuario[i].contraseña=contr;
                 break;
             }
         }
     }
     
                         
-    public Usuario[] getListaUsuarios() {
-        
-        return listaUsuarios;
-    }
 
-    public void setListaUsuarios(Usuario[] listaUsuarios) {
-        
-        this.listaUsuarios = listaUsuarios;
-    }
  
 
     public String getNomUsuario() {
@@ -97,14 +92,6 @@ public class Usuario {
 
     public void setNomUsuario(String nomUsuario) {
         this.nomUsuario = nomUsuario;
-    }
-
-    public String getCedula() {
-        return cedula;
-    }
-
-    public void setCedula(String cedula) {
-        this.cedula = cedula;
     }
 
     public String getCorreo() {
@@ -122,14 +109,17 @@ public class Usuario {
     public void setContraseña(String contraseña) {
         this.contraseña = contraseña;
     }
-
-    public String getDireccion() {
-        return direccion;
+    public Usuario[] getListaUsuario() {
+        
+        return listaUsuario;
     }
 
-    public void setDireccion(String direccion) {
-        this.direccion = direccion;
+    public void setListaUsuario(Usuario[] listaUsuario) {
+        
+        
+        this.listaUsuario = listaUsuario;
     }
+    
     
     
 }
