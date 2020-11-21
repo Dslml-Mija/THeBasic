@@ -17,8 +17,8 @@ public class Usuario {
     Usuario listaUsuarios[]=new Usuario[5];
     
     public Usuario(){
-        listaUsuarios[0]=new Usuario("Administrador", null, "Admin@gmail","Admin123", null);
-        listaUsuarios[1]=new Usuario("mija", "154456462", "mija28@hotmail", "mija123", "SanJose");
+        listaUsuarios[0]=Usuario("Administrador", null, "Admin@gmail","Admin123", null);
+        listaUsuarios[1]=Usuario("mija", "154456462", "mija28@hotmail", "mija123", "SanJose");
         
     }
     
