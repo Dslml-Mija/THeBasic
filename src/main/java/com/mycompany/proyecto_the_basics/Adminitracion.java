@@ -16,6 +16,7 @@ public class Adminitracion {
     public Adminitracion(String admin, String contra) {
         this.admin = admin;
         this.contra = contra;
+        
     }
 
     public String getAdmin() {
@@ -34,18 +35,6 @@ public class Adminitracion {
     private int cierreCaja;
     
     public Adminitracion(){}
-    public void logAdmin(){
-        int contador=0;
-        do{
-            String logAd=JOptionPane.showInputDialog("Ingrese Usuario");
-            String logCon=JOptionPane.showInputDialog("ingrese contraseña");
-            if(logAd==admin&&logCon==contra){
-                
-            }
-            contador++;
-            
-        }while(contador!=3);
-    }
     
     public String getInventario() {
         return inventario;
