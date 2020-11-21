@@ -38,5 +38,6 @@ public class Principal {
                 
             }while(menu!=0);
     }
+    public static void nuevo(){}
     
 }
