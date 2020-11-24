@@ -5,89 +5,44 @@
  */
 package com.mycompany.proyecto_the_basics;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author mija2
  */
 public class Servicios {
     
-    public String recAgua;
-    public String recTel;
-    public String recLuz;
-    public String recInter;
-    public String racMarchamo;
-    public String numRegistro;
-    public String recCable;
+    private String nombres;
+    private int montos;
+    private int codigos;
 
-    public Servicios(String recAgua, String recTel, String recLuz, String recInter, String racMarchamo, String numRegistro, String recCable) {
-        this.recAgua = recAgua;
-        this.recTel = recTel;
-        this.recLuz = recLuz;
-        this.recInter = recInter;
-        this.racMarchamo = racMarchamo;
-        this.numRegistro = numRegistro;
-        this.recCable = recCable;
-    }
-
-    public static void PagoServicios() {
-        
-        
+    public Servicios(String nombres, int montos, int codigos) {
+        this.nombres = nombres;
+        this.montos = montos;
+        this.codigos = codigos;
     }
     
-    public String getRecAgua() {
-        return recAgua;
+    public Servicios(){
     }
-
-    public void setRecAgua(String recAgua) {
-        this.recAgua = recAgua;
-    }
-
-    public String getRecTel() {
-        return recTel;
-    }
-
-    public void setRecTel(String recTel) {
-        this.recTel = recTel;
-    }
-
-    public String getRecLuz() {
-        return recLuz;
-    }
-
-    public void setRecLuz(String recLuz) {
-        this.recLuz = recLuz;
-    }
-
-    public String getRecInter() {
-        return recInter;
-    }
-
-    public void setRecInter(String recInter) {
-        this.recInter = recInter;
-    }
-
-    public String getRacMarchamo() {
-        return racMarchamo;
-    }
-
-    public void setRacMarchamo(String racMarchamo) {
-        this.racMarchamo = racMarchamo;
-    }
-
-    public String getNumRegistro() {
-        return numRegistro;
-    }
-
-    public void setNumRegistro(String numRegistro) {
-        this.numRegistro = numRegistro;
-    }
-
-    public String getRecCable() {
-        return recCable;
-    }
-
-    public void setRecCable(String recCable) {
-        this.recCable = recCable;
+    
+    int pagar;
+    
+    public void PagoServicios(){
+        
+        int pagar = Integer.parseInt(JOptionPane.showInputDialog("Digite la cantidad de recibos que desea pagar"));
+        Servicios pago[] = new Servicios[pagar];
+      
+        for(int x=0;x<pago.length;x++){
+            JOptionPane.showMessageDialog(null, "A continuacion se le pediran los datos del recibo "+(x+1));
+            
+            String nombre= JOptionPane.showInputDialog("Ingrese el nombre del servicio a pagar");
+             int codigo = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el codigo del recibo"));
+            int monto = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el monto a pagar en colones por el recibos de "+nombre));
+            pago[x]= new Servicios(nombre,monto,codigo);
+            
+            JOptionPane.showMessageDialog(null, "\nRecibo de " + pago[x].nombres + "\nMonto a pagar por el recibo: " + pago[x].montos + " Colones"+ "Codigo del recibo: "+pago[x].codigos);
+        }
     }
     
     
