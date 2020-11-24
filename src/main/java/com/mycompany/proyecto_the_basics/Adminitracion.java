@@ -13,68 +13,42 @@ import javax.swing.JOptionPane;
  */
 public class Adminitracion {
 
-    public Adminitracion(String admin, String contra) {
-        this.admin = admin;
-        this.contra = contra;
-        
-    }
+   
 
-    public String getAdmin() {
-        return admin;
-    }
-
-    public String getContra() {
-        return contra;
-    }
-    private String admin;
-    private String contra;
-    private String inventario;
-    private int dinCaja;
-    private String empleados;
-    private String Facturacion;
-    private int cierreCaja;
     
-    public Adminitracion(){}
     
-    public String getInventario() {
-        return inventario;
+    
+    
+    
+    public Adminitracion(){    
     }
+    public void menuAdmin(){
+        int menu;
+        do{
+            menu = Integer.parseInt(JOptionPane.showInputDialog("Menu de Administrador \n"+"1. Empleados \n"+"2. peoductos \n"));
+            switch(menu){
+               
+                case 1:
+                    //nomina
+                    Nomina nomina=new Nomina();
+                    nomina.pago();
+                case 2:
+                    Productos mostrar =new Productos();
+                    mostrar.mostrarProductos();
+                    //productos
+            
+            }
+            
+            
+            
+            
+        }while(menu!=0);
+    }
+    
+    
+  
 
-    public void setInventario(String inventario) {
-        this.inventario = inventario;
-    }
-
-    public int getDinCaja() {
-        return dinCaja;
-    }
-
-    public void setDinCaja(int dinCaja) {
-        this.dinCaja = dinCaja;
-    }
-
-    public String getEmpleados() {
-        return empleados;
-    }
-
-    public void setEmpleados(String empleados) {
-        this.empleados = empleados;
-    }
-
-    public String getFacturacion() {
-        return Facturacion;
-    }
-
-    public void setFacturacion(String Facturacion) {
-        this.Facturacion = Facturacion;
-    }
-
-    public int getCierreCaja() {
-        return cierreCaja;
-    }
-
-    public void setCierreCaja(int cierreCaja) {
-        this.cierreCaja = cierreCaja;
-    }
+   
     
     
     
