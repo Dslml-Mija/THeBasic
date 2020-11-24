@@ -25,7 +25,7 @@ public class Adminitracion {
     public void menuAdmin(){
         int menu;
         do{
-            menu = Integer.parseInt(JOptionPane.showInputDialog("Menu de Administrador \n"+"1. Empleados \n"+"2. peoductos \n"));
+            menu = Integer.parseInt(JOptionPane.showInputDialog("Menu de Administrador \n"+"1. Nomina \n"+"2. Productos \n"));
             switch(menu){
                
                 case 1:

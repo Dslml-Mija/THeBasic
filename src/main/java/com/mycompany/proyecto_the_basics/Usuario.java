@@ -47,8 +47,8 @@ public class Usuario {
                 String correo=JOptionPane.showInputDialog("Ingrese Correo");
                 String contraLog=JOptionPane.showInputDialog("Ingrese contra");
                 if(listaUsuario[i].correo.equals(correo)&&listaUsuario[i].contraseña.equals(contraLog)){
-                    JOptionPane.showMessageDialog(null, "Bienvenido");
-                    if(listaUsuario[i].nomUsuario=="adminsitrador"){
+                    JOptionPane.showMessageDialog(null, "Bienvenido ");
+                    if(listaUsuario[i].nomUsuario.equals("Administrador")){
                         Adminitracion admin= new Adminitracion();
                         admin.menuAdmin();
                     }

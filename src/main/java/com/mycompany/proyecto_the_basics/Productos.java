@@ -46,9 +46,7 @@ public class Productos {
         for(int i=0;i<listaProductos.length;i++){
             
             mostrar= mostrar+"Producto= "+listaProductos[i].nomProducto+ " \n"+"Descripcion: "+listaProductos[i].descripcion+ "\n"+" Precio: "+listaProductos[i].precio;
-            if(mostrar!=null){
-                break;
-            }
+            
        
         }
         JOptionPane.showMessageDialog(null, mostrar);

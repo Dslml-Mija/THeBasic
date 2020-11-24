@@ -22,10 +22,13 @@ public class Principal {
             JOptionPane.showMessageDialog(null, "Bienvenido a The Basic Store");
                 do{
                 
-                menu= Integer.parseInt(JOptionPane.showInputDialog("Digite el numero de la accion que desea ralizar \n"+"1.Usuario \n2.Registro \n3.Administrador \n0.Salir"));
+                menu= Integer.parseInt(JOptionPane.showInputDialog("Digite el numero de la accion que desea ralizar \n"
+                        +"1.Usuario \n2.Registro \n3.Administrador \n0.Salir"));
                 if(menu==1){
                     Usuario logIn=new Usuario();
                     logIn.LogIn();
+                    calificacion cali=new calificacion();
+                   
                     
                 }
                 if(menu==2){
