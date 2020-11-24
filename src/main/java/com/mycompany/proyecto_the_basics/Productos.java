@@ -6,6 +6,7 @@
 package com.mycompany.proyecto_the_basics;
 
 import javax.print.DocFlavor;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -39,6 +40,18 @@ public class Productos {
         listaProductos[9]=new Productos(nomProducto, precio, descripcion);
         listaProductos[0]=new Productos(nomProducto, precio, descripcion);
         
+    }
+    public void mostrarProductos(){
+        String mostrar="";
+        for(int i=0;i<listaProductos.length;i++){
+            
+            mostrar= mostrar+"Producto= "+listaProductos[i].nomProducto+ " \n"+"Descripcion: "+listaProductos[i].descripcion+ "\n"+" Precio: "+listaProductos[i].precio;
+            if(mostrar!=null){
+                break;
+            }
+       
+        }
+        JOptionPane.showMessageDialog(null, mostrar);
     }
 
     public String getNomProducto() {
