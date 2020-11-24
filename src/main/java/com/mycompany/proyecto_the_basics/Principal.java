@@ -33,6 +33,10 @@ public class Principal {
                     registro.nuevoRegistro();
                     registro.LogIn();
                 }
+                if(menu==3){
+                    Usuario logIn =new Usuario();
+                    logIn.LogIn();
+                }
                 
                 
                 
