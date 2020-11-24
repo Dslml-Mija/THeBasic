@@ -49,7 +49,8 @@ public class Usuario {
                 if(listaUsuario[i].correo.equals(correo)&&listaUsuario[i].contraseña.equals(contraLog)){
                     JOptionPane.showMessageDialog(null, "Bienvenido");
                     if(listaUsuario[i].nomUsuario=="adminsitrador"){
-                        
+                        Adminitracion admin= new Adminitracion();
+                        admin.menuAdmin();
                     }
                     
                     break;
